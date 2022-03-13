@@ -33,7 +33,7 @@ class shutWindow(QMainWindow,Ui_shutWindow1.Ui_MainWindow):
     def run(self):
         tick=localtime()
         s=str(tick.tm_hour)+':'+str(tick.tm_min)
-        if s in Times and tick.tm_sec==10:
+        if s in Times and tick.tm_sec==30:
             self.show()
             popen('shutdown -s -t 30')
 

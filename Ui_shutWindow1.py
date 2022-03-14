@@ -23,7 +23,7 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 211, 221))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("C:\\Users\\tzzx\Documents\\定时关机\\wendi.png"))
+        self.label.setPixmap(QtGui.QPixmap("wendi.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)

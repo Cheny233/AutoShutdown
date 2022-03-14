@@ -50,7 +50,7 @@ if __name__=='__main__':
     swin=shutWindow()
     sui=Ui_shutWindow1.Ui_MainWindow()
     sui.setupUi(swin)
-    swin.setWindowFlags(QtCore.Qt.WindowStaysOnTopHint)
+    swin.setWindowFlags(QtCore.Qt.WindowStaysOnTopHint|QtCore.Qt.WindowMinimizeButtonHint)
 
     sys.exit(app.exec_())
 

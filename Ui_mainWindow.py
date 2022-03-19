@@ -75,6 +75,7 @@ class Ui_mainWindow(object):
         self.spinBox_2.setGeometry(QtCore.QRect(400, 270, 110, 30))
         self.spinBox_2.setStyleSheet("font: 12pt \"微软雅黑\";")
         self.spinBox_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.spinBox_2.setMaximum(300)
         self.spinBox_2.setObjectName("spinBox_2")
         mainWindow.setCentralWidget(self.centralwidget)
 

@@ -230,6 +230,9 @@
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
+    <property name="maximum">
+     <number>300</number>
+    </property>
    </widget>
   </widget>
  </widget>

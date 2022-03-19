@@ -44,13 +44,6 @@ class Ui_MainWindow(object):
         self.label_5.setStyleSheet("font: 25pt \"微软雅黑\";")
         self.label_5.setObjectName("label_5")
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 677, 23))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
         self.pushButton.clicked.connect(MainWindow.Quit) # type: ignore

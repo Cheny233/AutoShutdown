@@ -132,7 +132,7 @@
    <sender>pushButton</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>hide()</slot>
+   <slot>Quit()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>396</x>

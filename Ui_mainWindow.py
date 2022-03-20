@@ -69,7 +69,7 @@ class Ui_mainWindow(object):
         self.spinBox.setAlignment(QtCore.Qt.AlignCenter)
         self.spinBox.setSuffix("")
         self.spinBox.setPrefix("")
-        self.spinBox.setMaximum(60)
+        self.spinBox.setMaximum(59)
         self.spinBox.setObjectName("spinBox")
         self.spinBox_2 = QtWidgets.QSpinBox(self.centralwidget)
         self.spinBox_2.setGeometry(QtCore.QRect(400, 270, 110, 30))

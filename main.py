@@ -23,27 +23,19 @@ class tray(QSystemTrayIcon):
     def __init__(self):
         super().__init__()
         self.setIcon(QIcon("wendi.ico"))
-        self.activated.connect(self.click)
         self.menu=QMenu()
-        self.action1=QAction('设置(settings)',self,triggered=self.Setting)
-        self.action2=QAction('退出(exit)',self,triggered=self.Quit)
+        self.action1=QAction('设置(settings)',self,triggered=self.settings)
+        self.action2=QAction('退出(exit)',self,triggered=app.quit)
+        self.activated.connect(self.menu.show)
 
         self.menu.addAction(self.action1)
         self.menu.addAction(self.action2)
         self.setContextMenu(self.menu)
-
     
-    def click(self):
-        #self.menu.move(QCursor.pos())
-        self.menu.show()
 
-
-    def Setting(self):
+    def settings(self):
+        mwin.Update_settings()
         mwin.show()
-    
-
-    def Quit(self):
-        app.quit()
 
 
 class mainWindow(QMainWindow,Ui_mainWindow.Ui_mainWindow):
@@ -57,7 +49,12 @@ class mainWindow(QMainWindow,Ui_mainWindow.Ui_mainWindow):
         self.ui.spinBox_2.setValue(DELAY)
         self.setWindowIcon(QIcon("wendi.ico"))
         self.Update_List()
+    
 
+    def Update_settings(self):
+        mwin.ui.spinBox_2.setValue(DELAY)
+        mwin.ui.spinBox.setValue(SEC)
+    
 
     def Pop(self):
         self.box=QMessageBox.information(self,'提示','设置成功！',QMessageBox.Ok)
@@ -101,6 +98,7 @@ class mainWindow(QMainWindow,Ui_mainWindow.Ui_mainWindow):
         SEC=self.ui.spinBox.value()
         self.ui.spinBox.setValue(SEC)
         settings.setValue('SETUP/SEC',SEC)
+        swin.ui.label_3.setText(QCoreApplication.translate("MainWindow", "您已拖堂"+str(SEC)+"秒"))
         self.Pop()
 
 
@@ -112,6 +110,7 @@ class shutWindow(QMainWindow,Ui_shutWindow.Ui_MainWindow):
         self.ui.setupUi(self)
 
         self.ui.label_5.setText(QCoreApplication.translate("MainWindow", str(DELAY)))
+        self.ui.label_3.setText(QCoreApplication.translate("MainWindow", "您已拖堂"+str(SEC)+"秒"))
         self.setWindowIcon(QIcon("wendi.ico"))
         self.setWindowFlags(Qt.WindowStaysOnTopHint|Qt.WindowMinimizeButtonHint)
 
